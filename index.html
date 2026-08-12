@@ -977,6 +977,119 @@
       margin-right:auto;
     }
 
+
+    .parking-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:12px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:#1f1f22;
+      color:white;
+      text-decoration:none;
+      font-size:.9rem;
+      font-weight:800;
+      box-shadow:0 8px 20px rgba(31,31,34,.14);
+      transition:transform .18s ease,background .18s ease,box-shadow .18s ease;
+    }
+    .parking-link:hover{
+      transform:translateY(-2px);
+      background:var(--accent);
+      box-shadow:0 11px 26px rgba(183,121,31,.22);
+    }
+
+
+    .car-arrangements{
+      width:min(920px,92%);
+      margin:26px auto 54px;
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+    }
+    .car-card{
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.06);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      transition:transform .2s ease,box-shadow .2s ease;
+    }
+    .car-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 44px rgba(55,38,20,.14);
+    }
+    .car-card h3{
+      margin:0 0 8px;
+      font-size:1.2rem;
+      letter-spacing:-.02em;
+    }
+    .car-card .driver{
+      color:var(--accent);
+      font-weight:850;
+      margin-bottom:10px;
+    }
+    .car-card .passengers{
+      color:var(--muted);
+      line-height:1.65;
+    }
+    @media(max-width:700px){
+      .car-arrangements{grid-template-columns:1fr}
+    }
+
+
+    .maps-pin-row{
+      margin-top:14px;
+      padding:12px 14px;
+      border-radius:14px;
+      background:#f6f6f4;
+      border:1px solid rgba(0,0,0,.08);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .maps-pin-row span{font-size:.88rem;font-weight:800;color:#333}
+    .maps-pin-row a{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:9px 13px;border-radius:999px;background:#1f1f22;
+      color:#fff;text-decoration:none;font-size:.84rem;font-weight:800;
+    }
+
+
+    .live-traffic-box{
+      margin-top:18px;padding:18px 20px;border-radius:18px;
+      background:#f7f7f5;border:1px solid rgba(0,0,0,.09);
+    }
+    .live-traffic-title{font-size:1rem;font-weight:900;margin-bottom:5px;color:#222}
+    .live-traffic-copy{font-size:.88rem;line-height:1.5;color:#666;margin-bottom:12px}
+    .live-traffic-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .live-traffic-actions a{
+      display:inline-flex;align-items:center;gap:7px;padding:10px 14px;
+      border-radius:999px;background:#1f1f22;color:#fff!important;
+      text-decoration:none!important;font-size:.84rem;font-weight:800;
+    }
+    .live-traffic-actions a.secondary{
+      background:#fff;color:#222!important;border:1px solid rgba(0,0,0,.14);
+    }
+
+
+    .mission-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:18px;
+      padding:12px 18px;
+      border-radius:999px;
+      background:#1f1f22;
+      color:#fff;
+      font-weight:850;
+    }
+    .qr-card img{
+      background:#fff;
+    }
+
 </style>
 </head>
 <body>
@@ -992,13 +1105,13 @@
       <div class="quick-info reveal">
         <div class="info-pill"><strong>👥 8 Pax</strong><span>Team size</span></div>
         <div class="info-pill"><strong>🚙 2 Cars</strong><span>Transport plan</span></div>
-        <div class="info-pill"><strong>🍽️ RM180–200</strong><span>Estimated food budget</span></div>
+        <div class="info-pill"><strong>🍽️ RM180–200 / pax</strong><span>Estimated food budget</span></div>
       </div>
     </div>
   </header>
   <section class="countdown-section wrap reveal">
     <h2 class="countdown-title">Countdown to Our JB Adventure</h2>
-    <p class="countdown-date">14 August 2026 · 9:00 AM · Singapore Time</p>
+    <p class="countdown-date">14 August 2026 · 8:30 AM · Singapore Time</p>
     <div class="countdown-grid" aria-label="Countdown timer">
       <div class="countdown-box"><strong id="days">00</strong><span>Days</span></div>
       <div class="countdown-box"><strong id="hours">00</strong><span>Hours</span></div>
@@ -1006,6 +1119,26 @@
       <div class="countdown-box"><strong id="seconds">00</strong><span>Seconds</span></div></div>
     </div>
   </section>
+
+  <section class="wrap reveal">
+    <h2 class="section-title" style="margin-bottom:16px;">🚙 Car Arrangements</h2>
+    <p style="text-align:center;color:var(--muted);margin:-4px auto 18px;max-width:680px;line-height:1.6;">
+      Both cars will cross the border separately. 🌿 <strong>Regroup at Roast &amp; Coffee between 9:45–10:00 AM.</strong>
+    </p>
+    <div class="car-arrangements">
+      <div class="car-card">
+        <h3>Car 1</h3>
+        <div class="driver">Brendan</div>
+        <div class="passengers"><strong>Passengers:</strong> Joseph, Kate, Vanessa (KIV)</div>
+      </div>
+      <div class="car-card">
+        <h3>Car 2</h3>
+        <div class="driver">YinSun</div>
+        <div class="passengers"><strong>Passengers:</strong> Weiny, Fion, Anya</div>
+      </div>
+    </div>
+  </section>
+
 
   <div class="experience-layout">
     
@@ -1019,6 +1152,12 @@
           <div class="growth-caption" id="growthCaption">The adventure begins.</div>
           <div class="growth-count" id="growthCount">0 / 6 Stops</div>
         </div>
+        <div class="seedling-teaser" style="margin-top:14px;padding:14px 16px;border-radius:16px;background:#f4f8ef;border:1px solid rgba(76,125,53,.14);color:#3f5f31;line-height:1.55;">
+          <strong>🌱 Keep your seedling growing!</strong><br>
+          Capture the moments, upload your favourite photos to our shared album, and keep your seedling growing along the way. 📸🌿<br><br>
+          Reach full bloom by the end of the journey and you may just unlock a tiny surprise. 👀✨
+        </div>
+
 
 
         <div class="passport-mini-progress"><div id="passportMiniFill"></div></div>
@@ -1163,15 +1302,24 @@
         <article class="stop-card">
           <div class="stop-head">
             <div>
-              <div class="time">9:00 AM</div>
-              <div class="place">📍 Meet at Woodlands Checkpoint</div>
+              <div class="time">8:30 AM</div>
+              <div class="place">📍 Pickup with respective drivers • Cross border separately</div>
             </div>
           </div>
-          <p class="desc">Please arrive on time so we can cross into Johor Bahru together.</p>
-        </article>
+          <p class="desc">Please arrive in time for pickup in Singapore. Each car will cross the border separately. Please regroup at Roast & Coffee between 9:45–10:00 AM.</p>
+
+          <div class="live-traffic-box">
+            <div class="live-traffic-title">🚦 Live Border Traffic</div>
+            <div class="live-traffic-copy">Check Woodlands Checkpoint conditions before setting off. LTA OneMotoring provides live checkpoint camera views and current traffic updates.</div>
+            <div class="live-traffic-actions">
+              <a href="https://onemotoring.lta.gov.sg/content/onemotoring/home/driving/traffic_information/traffic-cameras.html" target="_blank" rel="noopener noreferrer">📹 Woodlands Live Cameras ↗</a>
+              <a class="secondary" href="https://onemotoring.lta.gov.sg/content/onemotoring/home/driving/traffic_information/traffic_updates_and_road_closures.html" target="_blank" rel="noopener noreferrer">🗺️ LTA Traffic Updates ↗</a>
+            </div>
+          </div>
+</article>
       </div>
 
-      <div class="travel reveal">🚗 Customs clearance around 10:00 AM</div>
+      <div class="travel reveal">🚗 Border crossing — timing varies by car</div>
 
       <div class="timeline-item reveal">
         <div class="dot"></div>
@@ -1183,7 +1331,7 @@
           </div>
           <div class="stop-head">
             <div>
-              <div class="time">10:30 AM – 12:00 PM</div>
+              <div class="time">9:45 AM – 11:15 AM</div>
               <div class="place">☕ Roast & Coffee – Retro Garden 1968's</div>
             </div>
             <div class="budget">RM30–40</div>
@@ -1196,10 +1344,15 @@
           <div class="venue-links">
             <a class="venue-link" href="https://roastandcoffee.eber.co/store/13143" target="_blank" rel="noopener noreferrer">🌐 Official store page ↗</a>
           </div>
-</article>
+
+          <div class="maps-pin-row">
+            <span>📍 Parking: UTC Johor</span>
+            <a href="https://www.google.com/maps/place/UTC+Johor/@1.4590784,103.7601252,17z/data=!3m1!5s0x31da12c2b828980b:0xba3fee33550cb193!4m6!3m5!1s0x31da12c2b639110d:0x52be25f25f3e889d!8m2!3d1.459073!4d103.7627055!16s%2Fg%2F11b6ty1k5y?entry=ttu" target="_blank" rel="noopener noreferrer">Open Google Maps ↗</a>
+          </div>
+        </article>
       </div>
 
-      <div class="travel reveal">🚗 ~15 mins to Mid Valley Southkey</div>
+      <div class="travel reveal">🚗 ~15–20 mins to Mid Valley Southkey</div>
 
       <div class="timeline-item reveal">
         <div class="dot"></div>
@@ -1211,7 +1364,7 @@
           </div>
           <div class="stop-head">
             <div>
-              <div class="time">12:15 PM – 2:15 PM</div>
+              <div class="time">11:30 AM – 1:40 PM</div>
               <div class="place">🛍️ Mid Valley Southkey</div>
             </div>
             <div class="budget">Own expenses</div>
@@ -1220,10 +1373,15 @@
           <div class="meta">
             <span class="tag">🅿️ Indoor multi-storey parking</span>
           </div>
+        
+          <div class="maps-pin-row">
+            <span>📍 The Mall, Mid Valley Southkey</span>
+            <a href="https://www.google.com/maps/place/The+Mall,+Mid+Valley+Southkey/@1.5013392,103.7748384,17z/data=!3m2!4b1!5s0x31da6ce10ca4b3ad:0x47c7e2aa18f625a!4m6!3m5!1s0x31da6ce180efcfb5:0x4cfa3e126a713ab5!8m2!3d1.5013338!4d103.7774187!16s%2Fg%2F11cssn35yr?entry=ttu" target="_blank" rel="noopener noreferrer">Open Google Maps ↗</a>
+          </div>
         </article>
       </div>
 
-      <div class="travel reveal">🚗 ~10–15 mins to Nimmies</div>
+      <div class="travel reveal">🚗 ~15–20 mins to Nimmies</div>
 
       <div class="timeline-item reveal">
         <div class="dot"></div>
@@ -1235,7 +1393,7 @@
           </div>
           <div class="stop-head">
             <div>
-              <div class="time">2:30 PM – 3:30 PM</div>
+              <div class="time">2:00 PM – 3:00 PM</div>
               <div class="place">🍰 Nimmies Pastry Cafe</div>
             </div>
             <div class="budget">RM30–40</div>
@@ -1248,10 +1406,15 @@
           <div class="venue-links">
             <a class="venue-link" href="https://www.instagram.com/nimmies.pastrycafe/" target="_blank" rel="noopener noreferrer">📷 Official Instagram ↗</a>
           </div>
-</article>
+
+          <div class="maps-pin-row">
+            <span>📍 Nimmies Pastry Cafe</span>
+            <a href="https://www.google.com/maps/place/Nimmies+Pastry+Cafe/@1.4904479,103.7634713,16z/data=!3m1!4b1!4m6!3m5!1s0x31da6d6e1e1b6e27:0x1411466d949d0e1a!8m2!3d1.4904425!4d103.7660516!16s%2Fg%2F11s9ch6sg3?entry=ttu" target="_blank" rel="noopener noreferrer">Open Google Maps ↗</a>
+          </div>
+        </article>
       </div>
 
-      <div class="travel reveal">🚗 ~5–10 mins to KSL City Mall</div>
+      <div class="travel reveal">🚗 ~10–15 mins to KSL City Mall</div>
 
       <div class="timeline-item reveal">
         <div class="dot"></div>
@@ -1263,7 +1426,7 @@
           </div>
           <div class="stop-head">
             <div>
-              <div class="time">3:45 PM – 5:15 PM</div>
+              <div class="time">3:15 PM – 5:00 PM</div>
               <div class="place">💆 KSL City Mall</div>
             </div>
             <div class="budget">Own expenses</div>
@@ -1272,10 +1435,15 @@
           <div class="meta">
             <span class="tag">🅿️ Basement & multi-storey parking</span>
           </div>
+        
+          <div class="maps-pin-row">
+            <span>📍 KSL City Mall</span>
+            <a href="https://www.google.com/maps/place/KSL+City+Mall/@1.485851,103.7598417,16z/data=!3m2!4b1!5s0x31da6cf8346036c3:0xd4d74dda9a3320b!4m6!3m5!1s0x31da6d30151ba167:0x5d3884a6b6fd557e!8m2!3d1.4858456!4d103.762422!16s%2Fm%2F0h54gkw?entry=ttu" target="_blank" rel="noopener noreferrer">Open Google Maps ↗</a>
+          </div>
         </article>
       </div>
 
-      <div class="travel reveal">🚗 ~5–10 mins to Twin Galaxy</div>
+      <div class="travel reveal">🚗 ~10–15 mins to Twin Galaxy</div>
 
       <div class="timeline-item reveal">
         <div class="dot"></div>
@@ -1287,7 +1455,7 @@
           </div>
           <div class="stop-head">
             <div>
-              <div class="time">5:45 PM – 7:30 PM</div>
+              <div class="time">6:00 PM – 7:30 PM</div>
               <div class="place">🥩 Tanba Japanese BBQ (Twin Galaxy)</div>
             </div>
             <div class="budget">~RM120</div>
@@ -1300,60 +1468,118 @@
           <div class="venue-links">
             <a class="venue-link" href="https://www.instagram.com/tanbajapanesebbq/" target="_blank" rel="noopener noreferrer">📷 Official Instagram ↗</a>
           </div>
-</article>
+
+          <div class="maps-pin-row">
+            <span>📍 Tanba Japanese BBQ · Twin Galaxy</span>
+            <a href="https://www.google.com/maps/place/Tanba+Japanese+BBQ+%E7%82%AD%E9%A9%AC%E7%83%A7%E8%82%89%E4%B8%93%E9%97%A8%E5%BA%97(Twin+Galaxy)/@1.4779487,103.7599182,17z/data=!3m1!4b1!4m6!3m5!1s0x31da6d32c6db8b6b:0x572a08692237105d!8m2!3d1.4779433!4d103.7624985!16s%2Fg%2F11c0qgz1xl?entry=ttu" target="_blank" rel="noopener noreferrer">Open Google Maps ↗</a>
+          </div>
+        </article>
       </div>
 
       <div class="travel reveal">🚗 7:30 PM onwards — return to Singapore</div>
     </section>
 
+    
     <section class="summary reveal">
-      <h2>📅 Activities & Budget Summary</h2>
-      <div class="summary-row"><strong>9:00 AM</strong><span>Meet at Woodlands Checkpoint</span><span class="amount">—</span></div>
-      <div class="summary-row"><strong>10:00 AM</strong><span>Clear Malaysia Customs</span><span class="amount">—</span></div>
-      <div class="summary-row"><strong>10:30 AM–12:00 PM</strong><span>Brunch @ Roast & Coffee</span><span class="amount">RM30–40</span></div>
-      <div class="summary-row"><strong>12:15 PM–2:15 PM</strong><span>Shopping @ Mid Valley Southkey</span><span class="amount">Own expenses</span></div>
-      <div class="summary-row"><strong>2:30 PM–3:30 PM</strong><span>Tea Break @ Nimmies Pastry Cafe</span><span class="amount">RM30–40</span></div>
-      <div class="summary-row"><strong>3:45 PM–5:15 PM</strong><span>Massage / Mani / Pedi @ KSL City Mall</span><span class="amount">Own expenses</span></div>
-      <div class="summary-row"><strong>5:45 PM–7:30 PM</strong><span>Dinner @ Tanba Japanese BBQ</span><span class="amount">~RM120</span></div>
-    </section>
+      <h2>📅 Activities &amp; Budget Summary</h2>
 
-    <section class="totals">
-      <div class="total-card reveal"><span>🍽️ Food Total</span><strong>RM180–200</strong></div>
-      <div class="total-card reveal"><span>🛍️ Shopping</span><strong>Own expenses</strong></div>
-      <div class="total-card reveal"><span>💆 Grooming</span><strong>Own expenses</strong></div>
-      <div class="total-card reveal"><span>⛽ Petrol, tolls & parking</span><strong>Shared by car</strong></div>
+      <div class="summary-row">
+        <strong>8:30 AM</strong>
+        <span>Pickup in Singapore with respective drivers • Cross border separately</span>
+        <span class="amount">—</span>
+      </div>
+
+      <div class="summary-row">
+        <strong>9:45–10:00 AM</strong>
+        <span>Regroup @ Roast &amp; Coffee</span>
+        <span class="amount">—</span>
+      </div>
+
+      <div class="summary-row">
+        <strong>9:45 AM–11:15 AM</strong>
+        <span>Brunch @ Roast &amp; Coffee</span>
+        <span class="amount">RM30–40 / pax</span>
+      </div>
+
+      <div class="summary-row">
+        <strong>11:30 AM–1:40 PM</strong>
+        <span>Shopping @ Mid Valley Southkey</span>
+        <span class="amount">Own expenses</span>
+      </div>
+
+      <div class="summary-row">
+        <strong>2:00 PM–3:00 PM</strong>
+        <span>Tea Break @ Nimmies Pastry Cafe</span>
+        <span class="amount">RM30–40 / pax</span>
+      </div>
+
+      <div class="summary-row">
+        <strong>3:15 PM–5:00 PM</strong>
+        <span>Massage / Mani / Pedi @ KSL City Mall</span>
+        <span class="amount">Own expenses</span>
+      </div>
+
+      <div class="summary-row">
+        <strong>6:00 PM–7:30 PM</strong>
+        <span>Dinner @ Tanba Japanese BBQ</span>
+        <span class="amount">~RM120 / pax</span>
+      </div>
     </section>
-<section class="wrap reveal"><div class="mission-card" id="missionCard"><div style="font-size:42px">🌿</div><h2>Mission Complete</h2><div class="mission-level">Touch Grass Level</div><div class="mission-progress"><div></div></div><p>Thanks for spending the day with the RFO BPR team.</p>
-      <p class="final-growth-message"><strong>💚 Thanks for taking a break from Jazz, meetings, UAT, and Radar tickets. You deserve a great break.</strong><br><br>
-Today was about slowing down, enjoying good food, sharing great company, and touching a little grass. 🌿<br><br>
-Because sometimes the best ideas happen when we step away from our screens.<br><br>
-<strong>Here’s to more adventures together. See you on the next one!</strong> 🚙✨</p><div class="mission-badge">🏅 Certified Grass Touchers</div></div></section></main>
+<section class="wrap reveal">
+      <div class="mission-card" id="missionCard">
+        <div style="font-size:42px">🌿</div>
+        <h2>Mission Complete</h2>
+        <div class="mission-level">Touch Grass Level</div>
+        <div class="mission-progress"><div></div></div>
+
+        <p class="final-growth-message">
+          <strong>💚 Thanks for taking a break from Jazz, meetings, UAT, and Radar tickets. You deserve a great break.</strong>
+          <br><br>
+          Today was about slowing down, enjoying good food, sharing great company, and touching a little grass. 🌿
+          <br><br>
+          Because sometimes the best ideas happen when we step away from our screens.
+          <br><br>
+          <strong>Here’s to more adventures together. See you on the next one!</strong> 🚙✨
+        </p>
+
+        <div class="mission-badge">🏅 Certified Grass Touchers</div>
+      </div>
+    </section>
+</main>
     </div>
   </div>
 
 
   
+  
   <section class="team-memories-clean reveal">
     <div class="team-memories-panel">
       <div class="team-memories-copy">
         <h2>📸 Team Memories</h2>
-        <p>“We came. We touched grass. We conquered JB.” Upload and view everyone’s favourite moments in one shared Kululu album — no app and no account required.</p>
+        <p>Every great journey deserves great memories. Let’s fill this album together. 🌿</p>
+        <p>Upload and view everyone’s favourite moments in our shared Kululu album — no app and no account required.</p>
+
         <div class="team-memory-actions">
           <button class="team-memory-button primary" type="button" data-open-album data-album-url="https://app.kululu.com/lbain1">Upload Team Photos ↗</button>
           <button class="team-memory-button secondary" type="button" data-open-album data-album-url="https://app.kululu.com/lbain1">View Shared Album</button>
         </div>
       </div>
+
       <div class="qr-card">
         <a href="https://app.kululu.com/lbain1" target="_blank" rel="noopener noreferrer" aria-label="Open the RFO BPR Kululu album">
-          <img src="assets/qr/event-qr-code.png" alt="QR code for the RFO BPR Touch Grass Kululu album"
-               style="display:block;width:min(180px,100%);height:auto;margin:0 auto 12px;border-radius:12px;box-shadow:0 0 0 1px #ddd;"
-               onerror="this.alt='QR image not found. Confirm assets/qr/event-qr-code.png is uploaded to GitHub.'">
+          <img src="https://yinsunng-gif.github.io/RFO-BPR-JB-Team-Building-Aug/assets/qr/event-qr-code.png"
+               alt="QR code for the RFO BPR Touch Grass Kululu album"
+               style="display:block;width:220px;max-width:100%;height:auto;margin:0 auto 16px;border-radius:12px;background:#fff;padding:10px;box-shadow:0 0 0 1px #ddd;">
         </a>
         <strong>Scan to join the album</strong>
-        <small>No app or account required. You can also use the buttons beside this QR code.</small>
+        <small style="display:block;margin-top:6px;">
+          If the QR does not appear, <a href="https://yinsunng-gif.github.io/RFO-BPR-JB-Team-Building-Aug/assets/qr/event-qr-code.png" target="_blank" rel="noopener noreferrer">open the QR image directly ↗</a>
+        </small>
+        <small>No app or account required.</small>
       </div>
     </div>
   </section>
+
 
   
   <div class="level-toast" id="levelToast" role="status" aria-live="polite">
