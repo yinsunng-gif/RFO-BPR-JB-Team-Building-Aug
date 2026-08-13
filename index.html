@@ -1090,6 +1090,50 @@
       background:#fff;
     }
 
+
+    .passport-mini-stop{
+      grid-template-columns:30px 1fr;
+      align-items:start;
+    }
+    .passport-stop-actions{
+      grid-column:1 / -1;
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      margin-top:3px;
+    }
+    .stamp-stop-btn{
+      appearance:none;
+      border:0;
+      border-radius:999px;
+      padding:8px 10px;
+      font:inherit;
+      font-size:.74rem;
+      font-weight:850;
+      cursor:pointer;
+      background:#1f1f22;
+      color:#fff;
+      transition:transform .18s ease,background .18s ease;
+    }
+    .stamp-stop-btn:hover{transform:translateY(-1px)}
+    .passport-mini-stop.active .stamp-stop-btn{background:#4c7d35}
+    .optional-upload-link{
+      font-size:.69rem;
+      font-weight:750;
+      color:var(--muted);
+      text-decoration:none;
+      text-align:center;
+    }
+    .optional-upload-link:hover{
+      color:var(--accent);
+      text-decoration:underline;
+    }
+    .passport-mini-stop.active{
+      background:#f1f7ed;
+      border-color:rgba(76,125,53,.22);
+      transform:none;
+    }
+
 </style>
 </head>
 <body>
@@ -1145,7 +1189,7 @@
     <aside class="passport-sticky">
       <div class="passport-mini">
         <h3>🌿 Touch Grass Passport</h3>
-        <p>Your journey stamps itself as you explore each stop.</p>
+        <p>Tap “🌱 Stamp this stop” when you reach each stop. Photo sharing is completely optional.</p>
         <div class="growth-journey" id="growthJourney">
           <div class="growth-plant" id="growthPlant">🌱</div>
           <div class="growth-title" id="growthTitle">Seedling</div>
@@ -1162,24 +1206,55 @@
 
         <div class="passport-mini-progress"><div id="passportMiniFill"></div></div>
 
+        
         <div class="passport-mini-list">
           <div class="passport-mini-stop" data-target="Roast & Coffee">
-            <span class="icon">☕</span><span class="name">Roast & Coffee</span><span class="check">✅</span>
+            <span class="icon">☕</span>
+            <span class="name">Roast & Coffee</span>
+            <div class="passport-stop-actions">
+              <button class="stamp-stop-btn" type="button">🌱 Stamp this stop</button>
+              <a class="optional-upload-link" href="https://app.kululu.com/lbain1" target="_blank" rel="noopener noreferrer">📸 Upload a memory (optional)</a>
+            </div>
           </div>
           <div class="passport-mini-stop" data-target="Mid Valley Southkey">
-            <span class="icon">🛍️</span><span class="name">Mid Valley</span><span class="check">✅</span>
+            <span class="icon">🛍️</span>
+            <span class="name">Mid Valley</span>
+            <div class="passport-stop-actions">
+              <button class="stamp-stop-btn" type="button">🌱 Stamp this stop</button>
+              <a class="optional-upload-link" href="https://app.kululu.com/lbain1" target="_blank" rel="noopener noreferrer">📸 Upload a memory (optional)</a>
+            </div>
           </div>
           <div class="passport-mini-stop" data-target="Nimmies Pastry Cafe">
-            <span class="icon">🍰</span><span class="name">Nimmies</span><span class="check">✅</span>
+            <span class="icon">🍰</span>
+            <span class="name">Nimmies</span>
+            <div class="passport-stop-actions">
+              <button class="stamp-stop-btn" type="button">🌱 Stamp this stop</button>
+              <a class="optional-upload-link" href="https://app.kululu.com/lbain1" target="_blank" rel="noopener noreferrer">📸 Upload a memory (optional)</a>
+            </div>
           </div>
           <div class="passport-mini-stop" data-target="KSL City Mall">
-            <span class="icon">💆</span><span class="name">KSL</span><span class="check">✅</span>
+            <span class="icon">💆</span>
+            <span class="name">KSL</span>
+            <div class="passport-stop-actions">
+              <button class="stamp-stop-btn" type="button">🌱 Stamp this stop</button>
+              <a class="optional-upload-link" href="https://app.kululu.com/lbain1" target="_blank" rel="noopener noreferrer">📸 Upload a memory (optional)</a>
+            </div>
           </div>
           <div class="passport-mini-stop" data-target="Tanba Japanese BBQ">
-            <span class="icon">🥩</span><span class="name">Tanba</span><span class="check">✅</span>
+            <span class="icon">🥩</span>
+            <span class="name">Tanba</span>
+            <div class="passport-stop-actions">
+              <button class="stamp-stop-btn" type="button">🌱 Stamp this stop</button>
+              <a class="optional-upload-link" href="https://app.kululu.com/lbain1" target="_blank" rel="noopener noreferrer">📸 Upload a memory (optional)</a>
+            </div>
           </div>
           <div class="passport-mini-stop" data-target="Return to Singapore">
-            <span class="icon">🚙</span><span class="name">Return Home</span><span class="check">✅</span>
+            <span class="icon">🚙</span>
+            <span class="name">Return Home</span>
+            <div class="passport-stop-actions">
+              <button class="stamp-stop-btn" type="button">🌱 Stamp this stop</button>
+              <a class="optional-upload-link" href="https://app.kululu.com/lbain1" target="_blank" rel="noopener noreferrer">📸 Upload a memory (optional)</a>
+            </div>
           </div>
         </div>
 
@@ -1680,7 +1755,7 @@
 
     requestAnimationFrame(animateConvoy);
 
-    const tripTime = new Date("2026-08-14T09:00:00+08:00").getTime();
+    const tripTime = new Date("2026-08-14T08:30:00+08:00").getTime();
 
     function updateCountdown(){
       const now = Date.now();
@@ -1709,13 +1784,32 @@
     setInterval(updateCountdown, 1000);
 
   
-const passportStops=[...document.querySelectorAll('.passport-stop')];const itineraryCards=[...document.querySelectorAll('.stop-card')];const passportFill=document.getElementById('passportFill');const passportPercent=document.getElementById('passportPercent');function updatePassport(){let completed=0;passportStops.forEach(stop=>{const target=stop.dataset.target;let matched=false;if(target==='Return to Singapore'){const h=[...document.querySelectorAll('h2')].find(el=>el.textContent.includes('Return to Singapore'));if(h)matched=h.getBoundingClientRect().top<innerHeight*.78}else{const card=itineraryCards.find(el=>el.textContent.includes(target));if(card)matched=card.getBoundingClientRect().top<innerHeight*.72}stop.classList.toggle('active',matched);stop.querySelector('.passport-status').textContent=matched?'Stamped':'Pending';if(matched)completed++});const pct=Math.round(completed/passportStops.length*100);passportFill.style.width=pct+'%';passportPercent.textContent=pct+'%'}addEventListener('scroll',updatePassport,{passive:true});addEventListener('resize',updatePassport);updatePassport();const missionCard=document.getElementById('missionCard');let played=false;new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){missionCard.classList.add('complete');if(!played){played=true;const colors=['#b7791f','#7ca35d','#f2c14e','#6b8afd','#e56b6f'];for(let i=0;i<48;i++){const p=document.createElement('span');p.className='confetti-piece';p.style.left=Math.random()*100+'%';p.style.background=colors[i%colors.length];p.style.animationDelay=Math.random()*1.2+'s';missionCard.appendChild(p)}}}}),{threshold:.55}).observe(missionCard);
+const missionCard=document.getElementById('missionCard');
+    let played=false;
+    if(missionCard){
+      new IntersectionObserver(es=>es.forEach(e=>{
+        if(e.isIntersecting){
+          missionCard.classList.add('complete');
+          if(!played){
+            played=true;
+            const colors=['#b7791f','#7ca35d','#f2c14e','#6b8afd','#e56b6f'];
+            for(let i=0;i<48;i++){
+              const p=document.createElement('span');
+              p.className='confetti-piece';
+              p.style.left=Math.random()*100+'%';
+              p.style.background=colors[i%colors.length];
+              p.style.animationDelay=Math.random()*1.2+'s';
+              missionCard.appendChild(p);
+            }
+          }
+        }
+      }),{threshold:.55}).observe(missionCard);
+    }
 
     const passportMiniStops = Array.from(document.querySelectorAll(".passport-mini-stop"));
-    const itineraryCardsMini = Array.from(document.querySelectorAll(".stop-card"));
     const passportMiniFill = document.getElementById("passportMiniFill");
     const passportMiniPercent = document.getElementById("passportMiniPercent");
-
+    const PASSPORT_STORAGE_KEY = "rfoBprTouchGrassStampsV1";
 
     const growthStages = [
       {icon:"🌱", title:"Seedling", caption:"The adventure begins."},
@@ -1738,7 +1832,22 @@ const passportStops=[...document.querySelectorAll('.passport-stop')];const itine
     let currentGrowthStage = 0;
     let toastTimer;
 
+    function loadStamps(){
+      try{
+        return JSON.parse(localStorage.getItem(PASSPORT_STORAGE_KEY) || "{}");
+      }catch(e){
+        return {};
+      }
+    }
+
+    function saveStamps(stamps){
+      try{
+        localStorage.setItem(PASSPORT_STORAGE_KEY, JSON.stringify(stamps));
+      }catch(e){}
+    }
+
     function showLevelToast(stage){
+      if(!levelToast || !levelToastIcon || !levelToastTitle) return;
       levelToastIcon.textContent = stage.icon;
       levelToastTitle.textContent = stage.title;
       levelToast.classList.add("show");
@@ -1746,57 +1855,71 @@ const passportStops=[...document.querySelectorAll('.passport-stop')];const itine
       toastTimer = setTimeout(() => levelToast.classList.remove("show"), 1800);
     }
 
-    function updateGrowthStage(completed){
-      const nextStage = Math.min(completed, growthStages.length - 1);
-      const stage = growthStages[nextStage];
+    function updateGrowthStage(completed, animate){
+      const stageIndex = Math.min(completed, growthStages.length - 1);
+      const stage = growthStages[stageIndex];
 
       growthPlant.textContent = stage.icon;
       growthTitle.textContent = stage.title;
       growthCaption.textContent = stage.caption;
       growthCount.textContent = `${completed} / ${passportMiniStops.length} Stops`;
 
-      if(nextStage !== currentGrowthStage){
-        currentGrowthStage = nextStage;
+      if(animate && stageIndex !== currentGrowthStage){
+        currentGrowthStage = stageIndex;
         growthJourney.classList.remove("level-up");
         void growthJourney.offsetWidth;
         growthJourney.classList.add("level-up");
         showLevelToast(stage);
         setTimeout(() => growthJourney.classList.remove("level-up"), 600);
+      }else{
+        currentGrowthStage = stageIndex;
       }
     }
 
-    function updateMiniPassport(){
+    function renderPassport(animate=false){
+      const stamps = loadStamps();
       let completed = 0;
 
       passportMiniStops.forEach(stop => {
-        const target = stop.dataset.target;
-        let reached = false;
+        const stamped = !!stamps[stop.dataset.target];
+        stop.classList.toggle("active", stamped);
 
-        if(target === "Return to Singapore"){
-          const returnHeading = Array.from(document.querySelectorAll("h2")).find(el => el.textContent.includes("Return to Singapore"));
-          if(returnHeading){
-            reached = returnHeading.getBoundingClientRect().top < window.innerHeight * .78;
-          }
-        } else {
-          const card = itineraryCardsMini.find(el => el.textContent.includes(target));
-          if(card){
-            reached = card.getBoundingClientRect().top < window.innerHeight * .72;
-          }
+        const button = stop.querySelector(".stamp-stop-btn");
+        if(button){
+          button.textContent = stamped ? "✅ Stamped" : "🌱 Stamp this stop";
+          button.setAttribute("aria-pressed", stamped ? "true" : "false");
         }
 
-        stop.classList.toggle("active", reached);
-        if(reached) completed++;
+        if(stamped) completed++;
       });
 
       const percent = Math.round((completed / passportMiniStops.length) * 100);
-      passportMiniFill.style.width = percent + "%";
-      passportMiniPercent.textContent = percent + "%";
-      updateGrowthStage(completed);
+      if(passportMiniFill) passportMiniFill.style.width = percent + "%";
+      if(passportMiniPercent) passportMiniPercent.textContent = percent + "%";
+      updateGrowthStage(completed, animate);
     }
 
-    window.addEventListener("scroll", updateMiniPassport, {passive:true});
-    window.addEventListener("resize", updateMiniPassport);
-    updateMiniPassport();
+    passportMiniStops.forEach(stop => {
+      const button = stop.querySelector(".stamp-stop-btn");
+      if(!button) return;
+
+      button.addEventListener("click", () => {
+        const stamps = loadStamps();
+        const key = stop.dataset.target;
+
+        if(stamps[key]){
+          delete stamps[key];
+          saveStamps(stamps);
+          renderPassport(false);
+        }else{
+          stamps[key] = true;
+          saveStamps(stamps);
+          renderPassport(true);
+        }
+      });
+    });
+
+    renderPassport(false);
 
     const albumModal = document.getElementById("albumModal");
     const albumUrl = "https://app.kululu.com/lbain1";
